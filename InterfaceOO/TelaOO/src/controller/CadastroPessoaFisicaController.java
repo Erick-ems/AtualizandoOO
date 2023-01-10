@@ -1,60 +1,23 @@
 package controller;
 
-import model.PessoaFisica;
 import view.CadastroPessoaFisica;
+import model.PessoaFisica;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-
-
-
-public class CadastroPessoaFisicaController {
-	
+public class CadastroPessoaFisicaController implements ActionListener {
+	private CadastroPessoaFisica view;
 	private PessoaFisica model;
 
-	private CadastroPessoaFisica view;
-	
-	
-	public void atualizarModelo() {
-        String nome = view.getNome();
-        String email = view.getEmail();
-        String telefone = view.getTelefone();
-        model.atualizarDados(nome, email, telefone);
-    }
-    
-    
-    
-    
-    
-    
-
-	public PessoaFisica getModel() {
-		return model;
+	public CadastroPessoaFisicaController (CadastroPessoaFisica view, PessoaFisica model) {
+	    this.view = view;
+	    this.model = model;
 	}
 
-	public void setModel(PessoaFisica model) {
-		this.model = model;
+	@Override
+	public void actionPerformed(ActionEvent e) {
+	    String nome = view.getNome();
+	    model.setNome(nome);
+	    view.setResultado("Nome salvo com sucesso!");
 	}
-
-	public CadastroPessoaFisica getView() {
-		return view;
-	}
-
-	public void setView(CadastroPessoaFisica view) {
-		this.view = view;
-	}
-	
-	
-	
-	public CadastroPessoaFisicaController(PessoaFisica model) {
-		this.setModel(model);
-	}
-	
-	public CadastroPessoaFisicaController(CadastroPessoaFisica view) {
-		this.setView(view);
-	}
-	
-	
-	
-	
-	
-	
 }
