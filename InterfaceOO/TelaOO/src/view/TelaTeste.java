@@ -34,7 +34,7 @@ public class TelaTeste {
 
         // Exibe as janelas
         janelaInterna.setVisible(true);
-        janelaPrincipal.setVisible(true);
+
     }
 
     public static void main(String[] args) {
