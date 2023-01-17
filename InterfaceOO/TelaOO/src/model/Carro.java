@@ -1,30 +1,32 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Carro {
-	 private int id;
+	 private String id;
 	 private String nome;
-	 private int ano;
+	 private String ano;
 	 private String marca;
 	 private String estilo;
 	 private String categoria;
-	 private float quilometragem;
+	 private String quilometragem;
 
-	  public Carro(int varId, String varNomeCar, int varAno, String varMarca, String varEstilo, String varCategoria, float varQuilometragem) {
+	  public Carro(String varId, String varNomeCar, String varAno, String varMarca, String varEstilo, String varCategoria, String varQuilometragem) {
 		  
-		id = varId;  
-	    nome = varNomeCar;
-	    ano = varAno;
-	    marca = varMarca;
-	    estilo = varEstilo;
-	    categoria = varCategoria;
-	    quilometragem = varQuilometragem;
+		this.id = id;  
+	    this.nome = nome;
+	    this.ano = ano;
+	    this.marca = marca;
+	    this.estilo = estilo;
+	    this.categoria = categoria;
+	    this.quilometragem = quilometragem;
 	  }
 
 	  
-	  public int getID() {
+	  public String getID() {
 		    return id;
 		  }
-	  public void setID(int id) {
+	  public void setID(String id) {
 		    this.id = id;
 		  }
 	  
@@ -38,10 +40,10 @@ public class Carro {
 	  }
 
 
-	  public int getAno() {
+	  public String getAno() {
 	    return ano;
 	  }
-	  public void setAno(int ano) {
+	  public void setAno(String ano) {
 	    this.ano = ano;
 
 	  }
@@ -67,15 +69,19 @@ public class Carro {
 	    this.categoria = categoria;
 	  }
 
-	  public float getQuilometragem() {
+	  public String getQuilometragem() {
 	    return quilometragem;
 	  }
-	  public void setQuilometragem(float quilometragem) {
+	  public void setQuilometragem(String quilometragem) {
 	    this.quilometragem = quilometragem;
 	  }
+	  
+	  public boolean Persistir(){
+	        return true;
+	    }
 
-	  @Override
-	  public String toString(){
-		  return "id" + this.id + " Carro " + this.nome + " Ano: " + this.ano + " Marca: " + this.marca + " Quilometragem: " + this.quilometragem + " Categoria: " + this.categoria + " Estilo: " + this.estilo;
+	  public static ArrayList<Carro> getCarro(){
+		  ArrayList<Carro> carros = new ArrayList();
+		  return carros;
 	  }
 	}

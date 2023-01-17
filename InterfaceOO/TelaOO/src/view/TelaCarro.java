@@ -1,12 +1,14 @@
 package view;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+
+import TableModel.CarroTM;
+import controller.ControllerCarro;
 
 
 public class TelaCarro implements ActionListener {
@@ -26,6 +28,16 @@ public class TelaCarro implements ActionListener {
     private JLabel labelQuilometragem = new JLabel("Quilometragem: ");
     private JTextField valorQuilometragem;
     private JButton botaoSalvar = new JButton("Salvar");
+    	
+    CarroTM Modelo;
+    
+    public void LoadTable(){
+        Modelo = new CarroTM();
+        tbl_carros.setModel(Modelo);
+        
+        tbl_carros.getColumnModel().getColumn(0).setPreferredWidth(100);
+        tbl_carros.getColumnModel().getColumn(1).setPreferredWidth(250);
+    }
 
     public TelaCarro() {
         janela = new JFrame("Cadastro de Veiculo");
