@@ -34,12 +34,12 @@ public class TelaCarro implements ActionListener {
 	private String s;
     	
 
+
+	
     public void inserirEditarCarro(ControleDados d, int pos) {
     	
     	posicao = pos;
     	dados = d;
-    	
-    	
     	
 
 		janela = new JFrame(s);

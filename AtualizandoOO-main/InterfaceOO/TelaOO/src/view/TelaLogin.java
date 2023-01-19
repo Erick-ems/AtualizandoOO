@@ -70,7 +70,7 @@ public class TelaLogin implements ActionListener{
 		 if (e.getSource() == botaoLogar) {
 
 	        } else if (e.getSource() == botaoCadastrar) {
-	        	 new TelaInicial();
+	        	 new TelaCarro().inserirEditarCarro(this, 0);
 	        }
 	 }
 	
